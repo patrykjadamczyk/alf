@@ -4,9 +4,9 @@ echo "Continue? [yN]"
 read answer
 
 if [[ $answer =~ [Yy] ]]; then
-  echo "Downloading from github.com/DannyBen/alf..."
-
-  CURL_COMMAND="curl -s https://raw.githubusercontent.com/DannyBen/alf/master/alf > /usr/local/bin/alf"
+  echo "Downloading from github.com/patrykjadamczyk/alf..."
+  
+  CURL_COMMAND="curl -s https://raw.githubusercontent.com/patrykjadamczyk/alf/dev/alf > /usr/local/bin/alf"
   
   if [[ $EUID -ne 0 ]]; then
     # not root, need sudo
