@@ -27,7 +27,7 @@ Getting Started
 
 ### 1. Install the `alf` executable script
 
-    $ bash <(curl -s https://raw.githubusercontent.com/DannyBen/alf/master/setup)
+    $ bash <(curl -s https://raw.githubusercontent.com/patrykjadamczyk/alf/dev/setup)
 
 If you prefer to install manually, simply download the [alf](/alf) file,
 place it somewhere in your path, and make it executable.
