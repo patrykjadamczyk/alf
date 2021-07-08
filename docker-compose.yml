@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  bash:
+    build: .
+    entrypoint: bash
+    <<: &default
+      image: dannyben/alf
+      volumes: 
+      - .:/app
+      - ./alf:/usr/local/bin/alf
+
+  zsh: &zsh
+    <<: *default
+    environment:
+      PS1: "zsh %/ $$ "
+    entrypoint: zsh
+
+  # TEST=connect docker-compose run test
+  test: &test
+    <<: *default
+    volumes: 
+    - .:/app
+    environment: { TEST }
+    command: test/approve
+
+  test_zsh: &test_zsh
+    <<: *zsh
+    command: test/approve_zsh
+
+  ci:
+    <<: *test
+    volumes: []
+
